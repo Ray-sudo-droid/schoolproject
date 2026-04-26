@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>India Travel Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    /* GLOBAL FIXES FOR MOBILE */
+    * {
+      box-sizing: border-box;
+      max-width: none%;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #1a1a1a;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* LIGHT INDIAN FLAG BACKGROUND (subtle watermark) */
+    /* - ::before draws the saffron/white/green bands across the page with low opacity
+       - ::after draws a subtle Ashoka Chakra (wheel) centered near the top as a watermark */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg,
+          rgba(255,153,51,0.06) 0%,
+          rgba(255,153,51,0.06) 33.333%,
+          rgba(255,255,255,0.02) 33.333%,
+          rgba(255,255,255,0.02) 66.666%,
+          rgba(19,136,8,0.06) 66.666%,
+          rgba(19,136,8,0.06) 100%);
+      /* subtle blur to soften */
+      filter: blur(0.5px);
+    }
+
+    
+
+    /* INDIA FLAG GRADIENT HEADER */
+    header {
+      background: linear-gradient(135deg, #FF9933, #ffffff, #138808);
+      color: #000;
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2; /* above watermark */
+    }
+
+    /* NAVIGATION */
+    nav {
+  background: #ffffff;
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start; /* FIXES THE CUT-OFF */
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+    nav a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: 0.25s ease;
+      display: inline-block;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    nav a:hover {
+      background: #FF9933;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px 60px;
+      position: relative;
+      z-index: 2; /* above watermark */
+    }
+
+    /* CARD SECTIONS */
+    section {
+      background: rgba(255,255,255,0.95);
+      margin-bottom: 25px;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      transition: 0.25s ease;
+      width: 100%;
+      backdrop-filter: blur(2px);
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #FF9933;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    /* TWO COLUMN LAYOUT */
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .two-col > div {
+      flex: 1 1 260px;
+    }
+
+    /* MOBILE HEADER FIX */
+    @media (max-width: 600px) {
+      header {
+        padding: 25px 15px;
+      }
+      body::after {
+        width: 160px;
+        height: 160px;
+        top: 10%;
+        opacity: 0.07;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* small accessibility tweak: ensure content sits above watermark */
+    main, header, footer, nav, section {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>India Travel Guide</h1>
+    <p>A visitor’s introduction to language, culture, food, and life in India</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#language">Language</a>
+    <a href="#currency-visa">Currency & Visa</a>
+    <a href="#culture">Culture & Customs</a>
+    <a href="#cuisine">Cuisine</a>
+    <a href="#geography">Geography</a>
+    <a href="#politics">Politics & Relations</a>
+    <a href="#safety">Safety</a>
+    <a href="#transportation">Transportation</a>
+    <a href="#extra">Extra Info</a>
+    <a href="#works-cited">Works Cited</a>
+  </nav>
+
+  <main>
+
+    <section id="home">
+      <h2>Home</h2>
+      <p>India is one of the most diverse and vibrant countries in the world. Located in South Asia, it is home to over 1.4 billion people, hundreds of languages, ancient traditions, and rapidly growing modern cities. From the snowy Himalayas to tropical beaches, India offers a mix of history, culture, and innovation unlike anywhere else.</p>
+      <p>This website is your guide to understanding India’s language, money, customs, food, geography, politics, safety, and transportation—everything a first‑time visitor needs to know.</p>
+    </section>
+
+    <section id="language">
+      <h2>Language(s)</h2>
+      <div class="two-col">
+        <div>
+          <h3>Main Languages</h3>
+          <ul>
+            <li>Hindi (most spoken)</li>
+            <li>English (used in business and government)</li>
+            <li>22 official languages total</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Basic Hindi Phrases</h3>
+          <ul>
+            <li>Hello — Namaste</li>
+            <li>Thank you — Dhanyavaad</li>
+            <li>Yes / No — Haan / Nahi</li>
+            <li>Excuse me — Maaf kijiye</li>
+            <li>How much is this? — Kitna hua?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="currency-visa">
+      <h2>Currency & Visa Requirements</h2>
+      <div class="two-col">
+        <div>
+          <h3>Currency</h3>
+          <p>India uses the Indian Rupee (INR), symbol ₹. Cash is common in markets and small shops, but credit cards and digital payments are widely used in cities.</p>
+        </div>
+        <div>
+          <h3>Visa</h3>
+          <p>Most visitors need a tourist visa before entering India. Many travelers can apply for an e‑Visa online. Passports usually must be valid for at least six months beyond the travel dates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="culture">
+      <h2>Culture & Customs</h2>
+      <ul>
+        <li>Traditional greeting is “Namaste” with hands pressed together.</li>
+        <li>Shoes are removed before entering homes and temples.</li>
+        <li>Modest clothing is expected in religious places.</li>
+        <li>The right hand is used for eating, giving, and receiving items.</li>
+        <li>India celebrates festivals like Diwali, Holi, Eid, and Christmas.</li>
+      </ul>
+    </section>
+
+    <section id="cuisine">
+      <h2>Cuisine</h2>
+      <div class="two-col">
+        <div>
+          <h3>Famous Dishes</h3>
+          <ul>
+            <li>Butter Chicken</li>
+            <li>Biryani</li>
+            <li>Naan</li>
+            <li>Dosa</li>
+            <li>Idli & Sambar</li>
+            <li>Street foods like Chaat and Vada Pav</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Food Etiquette</h3>
+          <ul>
+            <li>Many people eat with their right hand.</li>
+            <li>Some homes and temples avoid meat and alcohol.</li>
+            <li>It’s polite to taste what is offered.</li>
+            <li>Drink bottled or filtered water to avoid stomach issues.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="geography">
+      <h2>Geography</h2>
+      <ul>
+        <li>Located in South Asia.</li>
+        <li>Borders Pakistan, China, Nepal, Bhutan, Bangladesh, and Myanmar.</li>
+        <li>Major regions include the Himalayas, Thar Desert, Ganges Plains, and tropical coasts.</li>
+        <li>Climate includes summer, monsoon, and winter seasons.</li>
+        <li>Major cities: New Delhi, Mumbai, Kolkata, Bengaluru, Chennai.</li>
+      </ul>
+    </section>
+
+    <section id="politics">
+      <h2>Politics, Government & Relations</h2>
+      <h3>Government System</h3>
+      <p>India is the world’s largest democracy. It has a parliamentary system with a President as head of state and a Prime Minister as head of government.</p>
+
+      <h3>Relationship with the U.S.</h3>
+      <p>India and the U.S. have strong ties in trade, technology, education, and defense. Many Indian students study in the U.S., and American companies invest heavily in India’s tech sector.</p>
+
+      <h3>Relationship with China</h3>
+      <p>India and China are major trading partners but also have border disputes and political tensions. Despite this, both countries remain important economic powers in Asia.</p>
+    </section>
+
+    <section id="safety">
+      <h2>Safety Concerns</h2>
+      <ul>
+        <li>India is generally safe for tourists, but crowded areas can have pickpocketing.</li>
+        <li>Traffic can be chaotic; visitors often use taxis or ride‑share apps.</li>
+        <li>Drink clean water and choose busy, clean food stalls.</li>
+        <li>Natural risks include heat waves, monsoon flooding, and air pollution in some cities.</li>
+      </ul>
+    </section>
+
+    <section id="transportation">
+      <h2>Transportation</h2>
+      <ul>
+        <li>Indian Railways connects most cities and towns.</li>
+        <li>Domestic flights are common for long distances.</li>
+        <li>City travel includes metros, buses, taxis, and auto‑rickshaws.</li>
+        <li>India drives on the left side of the road.</li>
+      </ul>
+    </section>
+
+    <section id="extra">
+      <h2>Additional Information</h2>
+      <ul>
+        <li>Zero was invented over here.</li>
+        <li>Cricket is the most popular sport.</li>
+        <li>India is the birthplace of yoga.</li>
+        <li>Bengaluru is known as India’s tech capital.</li>
+      </ul>
+    </section>
+
+    <section id="works-cited">
+      <h2>Works Cited (MLA)</h2>
+      <ol>
+        <li>“India.” <i>CIA World Factbook</i>, Central Intelligence Agency, 
+          <a href="https://www.cia.gov/the-world-factbook/countries/india/" target="_blank">
+          India – CIA World Factbook
+          </a>.
+          </li>
+          
+          <li>“India.” <i>Encyclopaedia Britannica</i>, Encyclopaedia Britannica, Inc., 
+          <a href="https://www.britannica.com/place/India" target="_blank">
+          India – Britannica
+          </a>.
+          </li>
+          
+          <li>“Travel Advisory: India.” <i>U.S. Department of State</i>, 
+          <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/india-travel-advisory.html" target="_blank">
+          India Travel Advisory
+          </a>.
+          </li>
+          
+          <li>“India Country Profile.” <i>BBC News</i>, British Broadcasting Corporation, 
+          <a href="https://www.bbc.com/news/world-south-asia-12557384" target="_blank">
+          India – BBC News Profile
+          </a>.
+          </li>
+          
+          <li>“India Overview.” <i>World Bank</i>, 
+          <a href="https://www.worldbank.org/en/country/india/overview" target="_blank">
+          India – World Bank Overview
+          </a>.
+          </li>
+      </ol> 
+    </section>
+
+  </main>
+
+  <footer>
+    <p>India Travel Guide — School Project</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.querySelector("nav");
+    nav.scrollLeft = 0; // forces the nav to show "Home" fully
+  });
+</script>
+
+</body>
+</html>
+
